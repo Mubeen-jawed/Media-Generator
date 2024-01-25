@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchUsers, addUser, removeUser } from "../store";
+import { fetchUsers, addUser } from "../store";
 import Skeleton from "./Skeleton";
 import Button from "./Button";
 import UsersListItem from "./UsersListItem";

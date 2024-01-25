@@ -1,42 +1,24 @@
 {
   "users": [
     {
-      "name": "Mariam Awan",
-      "id": 41
-    },
-    {
-      "name": "Mariam Awan",
-      "id": 42
-    },
-    {
-      "name": "Mariam Awan",
-      "id": 45
-    },
-    {
-      "name": "Laiba",
-      "id": 46
-    },
-    {
-      "name": "Laiba",
-      "id": 47
+      "name": "1",
+      "id": 1
     },
     {
       "name": "1",
-      "id": 48
+      "id": 2
     },
     {
       "name": "1",
-      "id": 49
-    },
-    {
-      "name": "1",
-      "id": 50
-    },
-    {
-      "name": "1",
-      "id": 51
+      "id": 3
     }
   ],
-  "albums": [],
+  "albums": [
+    {
+      "id": 10,
+      "title": "Album 1",
+      "userId": 1
+    }
+  ],
   "photos": []
 }
