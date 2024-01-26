@@ -9,7 +9,7 @@ import { albumsApi } from "./apis/albumApi";
 const store = configureStore({
   reducer: {
     users: userReducer,
-    [albumsApi.reducerPath]: albumsApi,
+    [albumsApi.reducerPath]: albumsApi.reducer,
   },
 
   middleware: (getDefaultMiddleare) => {
@@ -20,4 +20,4 @@ const store = configureStore({
 setupListeners(store.dispatch);
 
 export { store, fetchUsers, addUser, removeUser };
-export { useFetchAlbumsQuery } from "./apis/albumApi";
+export { useFetchAlbumsQuery, useAddAlbumMutation } from "./apis/albumApi";

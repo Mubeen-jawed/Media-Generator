@@ -1,5 +1,5 @@
 import React from "react";
-import { useFetchAlbumsQuery } from "../store";
+import { useFetchAlbumsQuery, useAddAlbumMutation } from "../store";
 import Skeleton from "./Skeleton";
 import Button from "./Button";
 import { GoTrash } from "react-icons/go";
@@ -7,8 +7,9 @@ import ExpandablePanel from "./ExpandablePanel";
 
 const AlbumList = ({ user }) => {
   const { data, isLoading, error } = useFetchAlbumsQuery(user);
-  const result = useFetchAlbumsQuery(user);
-  console.log(result);
+  const [addAlbum, result] = useAddAlbumMutation();
+  // const result = useFetchAlbumsQuery(user);
+  // console.log(result);
 
   let content;
 
@@ -18,19 +19,26 @@ const AlbumList = ({ user }) => {
     content = <div>{error}</div>;
   } else {
     content = data.map((album) => {
-      const header = <div> {album.title}</div>;
+      const header = <div>{album.title}</div>;
 
-      <ExpandablePanel header={header} key={album.id}>
-        List Of Photos
-      </ExpandablePanel>;
+      return (
+        <ExpandablePanel header={header} key={album.id}>
+          List Of Photos
+        </ExpandablePanel>
+      );
     });
   }
 
-  console.log(data, isLoading, error);
+  function handleAddAlbum() {
+    addAlbum(user);
+  }
 
   return (
     <div>
-      <div className="mb-4">Albums By {user.name}</div>
+      <div className="mb-4 flex justify-between items-center">
+        <p>Albums By {user.name}</p>
+        <Button onClick={handleAddAlbum}>+ Add Album</Button>
+      </div>
       <div>{content}</div>
     </div>
   );
