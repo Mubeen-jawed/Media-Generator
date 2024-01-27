@@ -35,9 +35,11 @@ const AlbumList = ({ user }) => {
 
   return (
     <div>
-      <div className="mb-4 flex justify-between items-center">
-        <p>Albums By {user.name}</p>
-        <Button onClick={handleAddAlbum}>+ Add Album</Button>
+      <div className="mb-2 m-2 flex justify-between items-center">
+        <p className="text-lg font-bold">Albums By {user.name}</p>
+        <Button loading={result.isLoading} onClick={handleAddAlbum}>
+          + Add Album
+        </Button>
       </div>
       <div>{content}</div>
     </div>

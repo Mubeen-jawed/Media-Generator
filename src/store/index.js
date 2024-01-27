@@ -17,6 +17,8 @@ const store = configureStore({
   },
 });
 
+window.store = store;
+
 setupListeners(store.dispatch);
 
 export { store, fetchUsers, addUser, removeUser };
