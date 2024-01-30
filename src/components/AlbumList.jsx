@@ -4,6 +4,7 @@ import Skeleton from "./Skeleton";
 import Button from "./Button";
 import { GoTrash } from "react-icons/go";
 import ExpandablePanel from "./ExpandablePanel";
+import AlbumListItem from "./AlbumListItem";
 
 const AlbumList = ({ user }) => {
   const { data, isLoading, error } = useFetchAlbumsQuery(user);
@@ -19,13 +20,7 @@ const AlbumList = ({ user }) => {
     content = <div>{error}</div>;
   } else {
     content = data.map((album) => {
-      const header = <div>{album.title}</div>;
-
-      return (
-        <ExpandablePanel header={header} key={album.id}>
-          List Of Photos
-        </ExpandablePanel>
-      );
+      return <AlbumListItem key={album.id} album={album} />;
     });
   }
 

@@ -22,4 +22,8 @@ window.store = store;
 setupListeners(store.dispatch);
 
 export { store, fetchUsers, addUser, removeUser };
-export { useFetchAlbumsQuery, useAddAlbumMutation } from "./apis/albumApi";
+export {
+  useFetchAlbumsQuery,
+  useAddAlbumMutation,
+  useRemoveAlbumMutation,
+} from "./apis/albumApi";
