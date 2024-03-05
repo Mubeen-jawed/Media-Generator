@@ -5,6 +5,7 @@ import { GoTrash } from "react-icons/go";
 import Button from "./Button";
 import ExpandablePanel from "./ExpandablePanel";
 import AlbumList from "./AlbumList";
+import axios from "axios";
 
 const UsersListItem = ({ user }) => {
   const [deleteUser, isDeletingUser, isDeletingError] = useThunk(removeUser);

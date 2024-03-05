@@ -1,23 +1,51 @@
 {
   "users": [
     {
-      "name": "1",
+      "name": "Dorthea Solum",
+      "id": 1
+    },
+    {
+      "name": "Paul Chapman",
+      "id": 2
+    },
+    {
+      "name": "Luis Tejeda",
+      "id": 3
+    },
+    {
+      "name": "Deborah Morgan",
       "id": 4
     },
     {
-      "name": "1",
+      "name": "Mikkel Olsen",
       "id": 5
-    },
-    {
-      "name": "1",
-      "id": 6
     }
   ],
   "albums": [
     {
-      "userId": 6,
-      "title": "yumna",
-      "id": 38
+      "userId": 1,
+      "title": "Album 1",
+      "id": 1
+    },
+    {
+      "userId": 1,
+      "title": "Album 1",
+      "id": 2
+    },
+    {
+      "userId": 1,
+      "title": "Album 1",
+      "id": 3
+    },
+    {
+      "userId": 2,
+      "title": "Album 2",
+      "id": 4
+    },
+    {
+      "userId": 2,
+      "title": "Album 2",
+      "id": 5
     }
   ],
   "photos": []

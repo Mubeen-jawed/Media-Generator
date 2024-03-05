@@ -2,19 +2,17 @@ import React from "react";
 import { useFetchAlbumsQuery, useAddAlbumMutation } from "../store";
 import Skeleton from "./Skeleton";
 import Button from "./Button";
-import { GoTrash } from "react-icons/go";
-import ExpandablePanel from "./ExpandablePanel";
 import AlbumListItem from "./AlbumListItem";
 
 const AlbumList = ({ user }) => {
-  const { data, isLoading, error } = useFetchAlbumsQuery(user);
+  const { data, isFetching, error } = useFetchAlbumsQuery(user);
   const [addAlbum, result] = useAddAlbumMutation();
   // const result = useFetchAlbumsQuery(user);
   // console.log(result);
 
   let content;
 
-  if (isLoading) {
+  if (isFetching) {
     content = <Skeleton className="h-10 w-full" times={4} />;
   } else if (error) {
     content = <div>{error}</div>;

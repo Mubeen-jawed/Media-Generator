@@ -21,6 +21,7 @@ const albumsApi = createApi({
     return {
       removeAlbum: builder.mutation({
         invalidatesTags: (result, error, album) => {
+          console.log(album);
           return [
             {
               type: "Album",
@@ -40,7 +41,7 @@ const albumsApi = createApi({
         invalidatesTags: (result, error, user) => {
           return [
             {
-              type: "Album",
+              type: "UsersAlbums",
               id: user.id,
             },
           ];
@@ -51,7 +52,7 @@ const albumsApi = createApi({
             method: "POST",
             body: {
               userId: user.id,
-              title: "yumna",
+              title: `Album ${user.id}`,
             },
           };
         },
@@ -59,12 +60,12 @@ const albumsApi = createApi({
 
       fetchAlbums: builder.query({
         providesTags: (result, error, user) => {
-          return [
-            {
-              type: "Album",
-              id: user.id,
-            },
-          ];
+          const tags = result.map((album) => {
+            return { type: "Album", id: album.id };
+          });
+
+          tags.push({ type: "UsersAlbums", id: user.id });
+          return tags;
         },
         query: (user) => {
           return {
