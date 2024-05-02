@@ -48,5 +48,21 @@
       "id": 5
     }
   ],
-  "photos": []
+  "photos": [
+    {
+      "albumId": 1,
+      "url": "https://picsum.photos/150/?random=1",
+      "id": 1
+    },
+    {
+      "albumId": 1,
+      "url": "https://picsum.photos/150/?random=1",
+      "id": 2
+    },
+    {
+      "albumId": 1,
+      "url": "https://picsum.photos/150/?random=1",
+      "id": 3
+    }
+  ]
 }
